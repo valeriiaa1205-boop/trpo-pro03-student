@@ -38,7 +38,7 @@ const saveToast = bootstrap.Toast.getOrCreateInstance(toastEl, {
 // ---------- Загрузка данных ----------
 async function loadDashboard() {
   try {
-    const res = await fetch('data/dashboard.json');
+    const res = await fetch('dashboard.json');
     if (!res.ok) throw new Error('Не удалось загрузить dashboard.json');
     const data = await res.json();
     metricsData = data.metrics || [];
@@ -59,7 +59,7 @@ async function loadDashboard() {
 
 async function loadNotifications() {
   try {
-    const res = await fetch('data/notifications.json');
+    const res = await fetch('notifications.json');
     if (!res.ok) throw new Error('Не удалось загрузить notifications.json');
     notificationsData = await res.json();
     renderNotifications();
